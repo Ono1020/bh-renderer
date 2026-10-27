@@ -42,8 +42,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y clang-format
       - name: Check formatting
         run: |
-          clang-format --dry-run --Werror \
-            renderer/src/*.cpp renderer/include/bh/*.hpp renderer/tests/*.cpp
+          find renderer -name '*.cpp' -o -name '*.hpp' -o -name '*.h' \
+            | sort | xargs clang-format --dry-run --Werror
 
   python:
     name: Blender addon (metadata test)

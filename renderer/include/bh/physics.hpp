@@ -16,9 +16,7 @@ inline double photonSphereRadius(double mass) { return 3.0 * mass; }
 inline double iscoRadiusSchwarzschild(double mass) { return 6.0 * mass; }
 
 // 影の臨界インパクトパラメータ b_crit = 3√3 M
-inline double criticalImpactParameter(double mass) {
-  return 3.0 * std::sqrt(3.0) * mass;
-}
+inline double criticalImpactParameter(double mass) { return 3.0 * std::sqrt(3.0) * mass; }
 
 // 事象の地平面の半径 (Kerr)。a はスピンパラメータ (0 <= a <= M)
 inline double horizonRadiusKerr(double mass, double spin) {
