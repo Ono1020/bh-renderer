@@ -23,8 +23,9 @@
 
 ## 状態
 
-開発初期 (Phase 1: Vulkan Compute 最小レンダラーの構築中)。
-ロードマップは `docs/spec/verification-and-roadmap.md` を参照。
+開発初期 (v0.1.0「最初の像」を開発中)。管理はバージョン単位で
+行う (ADR-0005)。ロードマップとバージョン対応表は
+`docs/spec/verification-and-roadmap.md` を参照。
 
 ## ライセンス
 

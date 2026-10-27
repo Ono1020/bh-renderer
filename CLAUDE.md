@@ -49,6 +49,7 @@ python3 blender_addon/tests/test_addon_metadata.py
 
 ## 規約
 
+- 管理単位はバージョン: Issue は目標バージョンの Milestone に紐づけ、タイトルに `[v0.1.0]` 等を前置する。仕様の Phase は技術区分 (ADR-0005)
 - ブランチ: `feat/<issue>-<slug>`, `fix/`, `docs/`, `exp/`。main へ直接 push しない
 - コミット: Conventional Commits (例: `feat(renderer): ...`)
 - PR は小さく保つ (目安 400 行以内)。1 Issue = 1 ブランチ = 1 PR
