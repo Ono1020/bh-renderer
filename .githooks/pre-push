@@ -1,0 +1,9 @@
+#!/bin/sh
+# push 前にテストを実行する。 有効化: git config core.hooksPath .githooks
+set -e
+echo "[pre-push] building and running tests..."
+cmake -S renderer -B build -DCMAKE_BUILD_TYPE=Release > /dev/null
+cmake --build build -j > /dev/null
+ctest --test-dir build --output-on-failure
+python3 blender_addon/tests/test_addon_metadata.py
+echo "[pre-push] all tests passed"

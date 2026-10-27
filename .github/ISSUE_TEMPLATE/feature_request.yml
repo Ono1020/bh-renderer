@@ -1,0 +1,24 @@
+name: 機能提案
+description: 新しい機能や改善の提案
+labels: ["type: feature"]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 提案内容
+    validations:
+      required: true
+  - type: textarea
+    id: spec
+    attributes:
+      label: 仕様との関係
+      description: "関係する docs/spec/ の節。仕様に無い内容は仕様 PR が先"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 受け入れ条件
+      description: 何ができたら完了と言えるか
+    validations:
+      required: true

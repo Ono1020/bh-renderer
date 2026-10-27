@@ -1,0 +1,31 @@
+name: 物理タスク
+description: 物理モデルの実装・検証に関するタスク
+labels: ["type: physics"]
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景と目的
+    validations:
+      required: true
+  - type: textarea
+    id: equations
+    attributes:
+      label: 根拠となる式と文献
+      description: 使用する方程式と出典 (論文・教科書) を必ず書くこと
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: 検証方法
+      description: 解析値との比較、BHraytracer の期待値、保存量チェック等、どう正しさを確認するか
+    validations:
+      required: true
+  - type: input
+    id: spec_section
+    attributes:
+      label: 関係する仕様の節
+      description: "例: docs/spec/physics.md §3.4"
+    validations:
+      required: true

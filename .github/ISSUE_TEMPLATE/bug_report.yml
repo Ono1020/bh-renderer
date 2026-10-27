@@ -1,0 +1,31 @@
+name: バグ報告
+description: 不具合の報告
+labels: ["type: bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+      description: 何が起きたか
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 再現手順
+      description: scene.json があれば添付すると早い
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待した動作 / 実際の動作
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 環境
+      description: "OS / GPU / Vulkan のバージョン"
+    validations:
+      required: true

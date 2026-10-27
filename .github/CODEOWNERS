@@ -1,0 +1,5 @@
+# 仕様と物理まわりはオーナーのレビューを必須とする
+* @Ono1020
+/docs/spec/ @Ono1020
+/renderer/include/ @Ono1020
+/.github/ @Ono1020
