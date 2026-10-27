@@ -10,7 +10,7 @@ jobs:
     name: C++ build & test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install Vulkan headers (optional path check)
         run: sudo apt-get update && sudo apt-get install -y libvulkan-dev
       - name: Configure
@@ -24,7 +24,7 @@ jobs:
     name: Shader validation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install glslang
         run: sudo apt-get update && sudo apt-get install -y glslang-tools
       - name: Validate compute shaders
@@ -37,7 +37,7 @@ jobs:
     name: clang-format
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install clang-format
         run: sudo apt-get update && sudo apt-get install -y clang-format
       - name: Check formatting
@@ -49,7 +49,7 @@ jobs:
     name: Blender addon (metadata test)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
