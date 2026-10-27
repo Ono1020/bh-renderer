@@ -1,0 +1,14 @@
+name: Nightly golden images
+
+# ゴールデン画像比較 (レンダー結果と基準画像の比較) の置き場。
+# Phase 1 でレンダラー本体ができてから有効化する。
+on:
+  workflow_dispatch:
+
+jobs:
+  golden:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: TODO
+        run: echo "Golden image tests are not implemented yet (Phase 1)."
