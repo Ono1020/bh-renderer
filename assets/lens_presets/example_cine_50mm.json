@@ -1,0 +1,11 @@
+{
+  "name": "example_cine_50mm",
+  "note": "プレースホルダ。実在レンズの処方 (特許公報等) に差し替えること",
+  "focal_length_mm": 50.0,
+  "sensor_width_mm": 70.41,
+  "sensor_height_mm": 52.63,
+  "aperture_blades": 8,
+  "surfaces": [
+    { "radius_mm": 0.0, "thickness_mm": 8.0, "nd": 1.0, "vd": 0.0, "coating_nm": 0.0 }
+  ]
+}

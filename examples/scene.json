@@ -1,0 +1,14 @@
+{
+  "camera": { "location": [60.0, -80.0, 25.0], "rotation_euler": [1.2, 0.0, 0.6], "fov_deg": 40.0 },
+  "blackhole": { "mass": 1.0, "spin": 0.0 },
+  "disk": { "r_in_mode": "isco", "r_out": 20.0, "thickness": 0.08,
+            "temperature_scale": 1.0, "density": 1.0, "turbulence": 0.7, "flow_time": 0.0 },
+  "particles": { "count": 100000, "size": 0.05, "velocity_dispersion": 0.02, "seed": 42 },
+  "render": { "width": 1920, "height": 1080, "max_steps": 3000, "escape_radius": 200.0,
+              "render_scale": 1.0, "overscan": 1.25 },
+  "lens": { "preset": "cine65_50mm", "gate": "imax_15_70", "f_number": 2.8,
+            "flare_strength": 1.0, "flare_scale": 0.5, "spectral_samples": 9, "front_dirt": "dirt.png" },
+  "film": { "halation": 0.5, "grain": 0.3, "gate_weave": 0.0 },
+  "sky": "sky.exr",
+  "meshes": "scene.glb"
+}

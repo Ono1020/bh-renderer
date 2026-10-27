@@ -1,0 +1,13 @@
+#version 450
+// 測地線積分の Compute Shader (Phase 1 プレースホルダ)
+// 仕様は docs/spec/renderer.md §6.1-6.2。本実装は Phase 1 の Issue で行う。
+layout(local_size_x = 8, local_size_y = 8) in;
+layout(binding = 0, rgba32f) uniform writeonly image2D outImage;
+
+void main() {
+  ivec2 px = ivec2(gl_GlobalInvocationID.xy);
+  if (px.x >= imageSize(outImage).x || px.y >= imageSize(outImage).y) {
+    return;
+  }
+  imageStore(outImage, px, vec4(0.0, 0.0, 0.0, 1.0));
+}
