@@ -9,6 +9,6 @@ jobs:
   golden:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: TODO
         run: echo "Golden image tests are not implemented yet (Phase 1)."
