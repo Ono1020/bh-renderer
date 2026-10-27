@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  cpp:
+    name: C++ build & test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Vulkan headers (optional path check)
+        run: sudo apt-get update && sudo apt-get install -y libvulkan-dev
+      - name: Configure
+        run: cmake -S renderer -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build -j
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+  shaders:
+    name: Shader validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install glslang
+        run: sudo apt-get update && sudo apt-get install -y glslang-tools
+      - name: Validate compute shaders
+        run: |
+          for f in renderer/shaders/*.comp; do
+            glslangValidator -V "$f" -o /tmp/out.spv
+          done
+
+  format:
+    name: clang-format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install clang-format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
+      - name: Check formatting
+        run: |
+          clang-format --dry-run --Werror \
+            renderer/src/*.cpp renderer/include/bh/*.hpp renderer/tests/*.cpp
+
+  python:
+    name: Blender addon (metadata test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile all Python files
+        run: python -m compileall -q blender_addon
+      - name: Run metadata test
+        run: python blender_addon/tests/test_addon_metadata.py
