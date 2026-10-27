@@ -1,5 +1,16 @@
 # 開発の進め方
 
+## バージョン管理
+
+- 開発管理の単位はバージョン (セマンティック バージョニング) とし、
+  GitHub の Milestone をバージョン名にする (ADR-0005)
+- Issue は目標バージョンの Milestone に必ず紐づけ、タイトルには
+  `[v0.1.0]` のように対象バージョンを前置する
+- 仕様書の Phase は技術的な依存関係の区分として残る。対応表は
+  `docs/spec/verification-and-roadmap.md` の冒頭にある
+- バージョンの区切りではタグと GitHub Release を切り、変更点
+  (CHANGELOG 相当) は Release ノートにまとめる
+
 ## ワークフロー
 
 1. Issue を立てる (または既存の Issue を取る)。担当者を自分にする
