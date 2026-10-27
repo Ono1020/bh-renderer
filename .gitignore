@@ -1,0 +1,11 @@
+build/
+build-*/
+*.o
+*.d
+*.out
+renders/
+*.spv
+__pycache__/
+.vscode/
+.idea/
+.DS_Store
